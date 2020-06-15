@@ -20,4 +20,23 @@ router.post("/", (req, res) => {
     })
 })
 
+router.get("/:id", (req, res) => {
+    projects.get(req.params.id)
+    .then((project) => {
+        if(project) {
+            res.status(200).json(project)
+        }else {
+            res.status(404).json({
+                message: "Project not found"
+            })
+        }
+    })
+    .catch((error) => {
+        console.log(error)
+        res.status(500).json({
+            message: "Error retrieving project"
+        })
+    })
+})
+
 module.exports = router
