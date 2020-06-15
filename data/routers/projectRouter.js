@@ -55,4 +55,24 @@ router.get("/:id/actions", (req, res) => {
     });
 });
 
+router.delete("/:id", (req, res) => {
+  projects
+    .remove(req.params.id)
+    .then((project) => {
+      if (project) {
+        res.status(200).json(project);
+      } else {
+        res.status(404).json({
+          message: "This project does not exist",
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({
+        message: "Cannot remove project",
+      });
+    });
+});
+
 module.exports = router;
