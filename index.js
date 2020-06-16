@@ -27,7 +27,7 @@ server.use(express.json())
 server.use(cors())
 server.unsubscribe(logger({format: "long"}))
 
-server.use("/api/projects", projectsRouter)
+server.use("/api/projects", projectRouter)
 server.use("/api/projects/:id/actions", actionRouter)
 
 server.use((err, req, res, next) => {
