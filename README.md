@@ -40,13 +40,25 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    Most development pipelines include different environments including development, production and testing.
+
+    You should extract away any values that need to change between environments, like database connections or the port.
+
 - [ ] Describe Middleware?
+
+    Middleware is an array of functions that get used in the order they are brought into the server code. Middleware functions can get the request and response objects, operate on them, and (when specified) trigger some action. Examples are logging or security.
 
 - [ ] Describe a Resource?
 
+    Everything is a resource with a RESTful API.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    An API should return an HTTP status code in JSON format, code 200 or 201 being the most used.
+
 - [ ] How can we partition our application into sub-applications?
+
+    You can split an application into sub-applications with Express Routers to make it more modular and easier to maintain. Each router can have its own middleware and routing. This combination provides improved functionality.
 
 ## Minimum Viable Product
 
